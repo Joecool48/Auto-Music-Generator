@@ -1,0 +1,6 @@
+Import('inc_dir')
+Import('build_dir')
+Import('src_dir')
+env = Environment(CPPPATH = ["../" + inc_dir], LIBS = ["pulse", "pulse-simple"])
+execute = env.Program("generate", ["generate_waves.cpp"])
+execute = env.Program("play_sound", ["play_sound.c"])
